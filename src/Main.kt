@@ -1,19 +1,19 @@
 fun main() {
-    var n = 327;
-    var result = count(n);
+    val n = 327;
+    val result = count(n);
     println(result);
 }
 
-fun count(n : Int) :Int {
+private fun count(n : Int) :Int {
     var number = n;
     var sum = 0;
     var multiply = 1;
     while(number > 0) {
-        var reminder = number % 10;
+        val reminder = number % 10;
         sum += reminder;
         multiply *= reminder
         number /= 10;
     }
-    var answer = multiply - sum;
+    val answer = multiply - sum;
     return answer;
 }
