@@ -1,19 +1,38 @@
+import java.util.*
+import java.math.*
+
 fun main() {
-    val n = 327;
-    val result = count(n);
-    println(result);
+    val coordinates = Point();
+    coordinates.x = 4;
+    coordinates.y = 2;
 }
 
-private fun count(n : Int) :Int {
-    var number = n;
-    var sum = 0;
-    var multiply = 1;
-    while(number > 0) {
-        val reminder = number % 10;
-        sum += reminder;
-        multiply *= reminder
-        number /= 10;
+class Point {
+    var x = 0;
+    var y = 0;
+
+    override fun equals(other: Any?): Boolean {
+        if(other is Point) {
+            if(other.x == x && other.y == y) {
+                return true;
+            }
+        }
+        return false;
     }
-    val answer = multiply - sum;
-    return answer;
+
+    override fun toString(): String {
+        var firstCoordinate = x.toString();
+        var secondCoordinate = y.toString();
+
+        //concatenated
+        return firstCoordinate + secondCoordinate;
+    }
+
+    fun reverse() {
+        y *= -1;
+        println(x);
+        println(y);
+    }
 }
+
+
